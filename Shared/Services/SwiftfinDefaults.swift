@@ -90,7 +90,7 @@ extension Defaults.Keys {
     static let selectUserUseSplashscreen: Key<Bool> = AppKey("selectUserUseSplashscreen", default: true)
 
     static let signOutOnBackground: Key<Bool> = AppKey("signOutOnBackground", default: true)
-    static let signOutOnClose: Key<Bool> = AppKey("signOutOnClose", default: true)
+    static let signOutOnClose: Key<Bool> = AppKey("signOutOnClose", default: false)
 }
 
 // MARK: User
@@ -140,9 +140,9 @@ extension Defaults.Keys {
 
         enum Library {
 
-            static let cinematicBackground: Key<Bool> = UserKey("Customization.Library.cinematicBackground", default: true)
+            static let cinematicBackground: Key<Bool> = UserKey("libraryCinematicBackground", default: true)
             static let enabledDrawerFilters: Key<[ItemFilterType]> = UserKey(
-                "Library.enabledDrawerFilters",
+                "libraryEnabledDrawerFilters",
                 default: ItemFilterType.allCases
             )
             static let displayType: Key<LibraryDisplayType> = UserKey("libraryViewType", default: .grid)
@@ -158,7 +158,7 @@ extension Defaults.Keys {
         enum Search {
 
             static let enabledDrawerFilters: Key<[ItemFilterType]> = UserKey(
-                "Search.enabledDrawerFilters",
+                "searchEnabledDrawerFilters",
                 default: ItemFilterType.allCases
             )
         }

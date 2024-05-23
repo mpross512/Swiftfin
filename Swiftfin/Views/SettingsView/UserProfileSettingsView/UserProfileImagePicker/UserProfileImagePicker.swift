@@ -6,18 +6,18 @@
 // Copyright (c) 2024 Jellyfin & Jellyfin Contributors
 //
 
-import JellyfinAPI
 import SwiftUI
 
-struct EpisodeItemView: View {
+struct UserProfileImagePicker: View {
 
-    @ObservedObject
-    var viewModel: EpisodeItemViewModel
+    @EnvironmentObject
+    private var router: UserProfileImageCoordinator.Router
 
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            ContentView(viewModel: viewModel)
-                .edgePadding(.bottom)
+        PhotoPicker {
+            router.dismissCoordinator()
+        } onSelectedImage: { image in
+            router.route(to: \.cropImage, image)
         }
     }
 }
