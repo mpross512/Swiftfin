@@ -112,6 +112,7 @@ extension Defaults.Keys {
         static let showPosterLabels: Key<Bool> = UserKey("showPosterLabels", default: true)
         static let nextUpPosterType: Key<PosterDisplayType> = UserKey("nextUpPosterType", default: .portrait)
         static let recentlyAddedPosterType: Key<PosterDisplayType> = UserKey("recentlyAddedPosterType", default: .portrait)
+        static let showRecentlyAdded: Key<Bool> = UserKey("showRecentlyAdded", default: true)
         static let latestInLibraryPosterType: Key<PosterDisplayType> = UserKey("latestInLibraryPosterType", default: .portrait)
         static let shouldShowMissingSeasons: Key<Bool> = UserKey("shouldShowMissingSeasons", default: true)
         static let shouldShowMissingEpisodes: Key<Bool> = UserKey("shouldShowMissingEpisodes", default: true)
@@ -144,6 +145,10 @@ extension Defaults.Keys {
             static let enabledDrawerFilters: Key<[ItemFilterType]> = UserKey(
                 "libraryEnabledDrawerFilters",
                 default: ItemFilterType.allCases
+            )
+            static let letterPickerEnabled: Key<Bool> = UserKey("letterPickerEnabled", default: false)
+            static let letterPickerOrientation: Key<LetterPickerOrientation> = .init(
+                "letterPickerOrientation", default: .trailing
             )
             static let displayType: Key<LibraryDisplayType> = UserKey("libraryViewType", default: .grid)
             static let posterType: Key<PosterDisplayType> = UserKey("libraryPosterType", default: .portrait)
